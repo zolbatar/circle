@@ -5,7 +5,7 @@
 //
 // Circle - A C++ bare metal environment for Raspberry Pi
 // Copyright (C) 2014-2021  R. Stange <rsta2@o2online.de>
-// 
+//
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
@@ -28,14 +28,14 @@
 //
 ///////////////////////////////////////////////////////////////////////
 
-#define MEGABYTE		0x100000	// do not change
+#define MEGABYTE 0x100000 // do not change
 
 // KERNEL_MAX_SIZE is the maximum allowed size of a built kernel image.
 // If your kernel image contains big data areas it may be required to
 // increase this value. The value must be a multiple of 16 KByte.
 
 #ifndef KERNEL_MAX_SIZE
-#define KERNEL_MAX_SIZE		(2 * MEGABYTE)
+#define KERNEL_MAX_SIZE (2 * MEGABYTE)
 #endif
 
 // HEAP_DEFAULT_NEW defines the default heap to be used for the "new"
@@ -49,7 +49,7 @@
 // This setting is only of importance for the Raspberry Pi 4.
 
 #ifndef HEAP_DEFAULT_NEW
-#define HEAP_DEFAULT_NEW	HEAP_LOW
+#define HEAP_DEFAULT_NEW HEAP_LOW
 #endif
 
 // HEAP_DEFAULT_MALLOC defines the heap to be used for malloc() and
@@ -59,7 +59,7 @@
 // malloc(). This setting is only of importance for the Raspberry Pi 4.
 
 #ifndef HEAP_DEFAULT_MALLOC
-#define HEAP_DEFAULT_MALLOC	HEAP_LOW
+#define HEAP_DEFAULT_MALLOC HEAP_LOW
 #endif
 
 // HEAP_BLOCK_BUCKET_SIZES configures the heap allocator, which is the
@@ -78,7 +78,7 @@
 // multiple of 64. Up to 20 sizes can be defined.
 
 #ifndef HEAP_BLOCK_BUCKET_SIZES
-#define HEAP_BLOCK_BUCKET_SIZES	0x40,0x400,0x1000,0x4000,0x10000,0x40000,0x80000
+#define HEAP_BLOCK_BUCKET_SIZES 0x40, 0x400, 0x1000, 0x4000, 0x10000, 0x40000, 0x80000
 #endif
 
 ///////////////////////////////////////////////////////////////////////
@@ -148,7 +148,7 @@
 // single core applications, because this may slow down the system
 // because multiple cores may compete for bus time without use.
 
-//#define ARM_ALLOW_MULTI_CORE
+#define ARM_ALLOW_MULTI_CORE
 
 #endif
 
@@ -215,7 +215,7 @@
 // with it.
 
 #ifndef SCREEN_DMA_BURST_LENGTH
-#define SCREEN_DMA_BURST_LENGTH	2
+#define SCREEN_DMA_BURST_LENGTH 2
 #endif
 
 // CALIBRATE_DELAY activates the calibration of the delay loop. Because
@@ -236,13 +236,13 @@
 // MAX_TASKS is the maximum number of tasks in the system.
 
 #ifndef MAX_TASKS
-#define MAX_TASKS		20
+#define MAX_TASKS 20
 #endif
 
 // TASK_STACK_SIZE is the stack size for each task.
 
 #ifndef TASK_STACK_SIZE
-#define TASK_STACK_SIZE		0x8000
+#define TASK_STACK_SIZE 0x8000
 #endif
 
 // NO_BUSY_WAIT deactivates busy waiting in the EMMC, SDHOST and USB
@@ -264,7 +264,7 @@
 
 #ifndef DEFAULT_KEYMAP
 
-#define DEFAULT_KEYMAP		"DE"
+#define DEFAULT_KEYMAP "DE"
 //#define DEFAULT_KEYMAP		"ES"
 //#define DEFAULT_KEYMAP		"FR"
 //#define DEFAULT_KEYMAP		"IT"
@@ -299,7 +299,7 @@
 
 #ifndef SERIAL_GPIO_SELECT
 
-#define SERIAL_GPIO_SELECT	14	// and 15
+#define SERIAL_GPIO_SELECT 14 // and 15
 //#define SERIAL_GPIO_SELECT	32	// and 33
 //#define SERIAL_GPIO_SELECT	36	// and 37
 
@@ -311,7 +311,7 @@
 // not by QEMU. If you rely on a small IRQ latency, USE_SDHOST should
 // be disabled.
 
-#if RASPPI <= 3 && !defined (REALTIME)
+#if RASPPI <= 3 && !defined(REALTIME)
 
 #ifndef NO_SDHOST
 #define USE_SDHOST

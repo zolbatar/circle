@@ -105,7 +105,7 @@
 
 /*Default Dot Per Inch. Used to initialize default sizes such as widgets sized, style paddings.
  *(Not so important, you can adjust it to modify default sizes and spaces)*/
-#define LV_DPI_DEF 130     /*[px/inch]*/
+#define LV_DPI_DEF 72     /*[px/inch]*/
 
 /*=======================
  * FEATURE CONFIGURATION
@@ -632,7 +632,7 @@
 #define LV_USE_FREETYPE 0
 #if LV_USE_FREETYPE
     /*Memory used by FreeType to cache characters [bytes] (-1: no caching)*/
-    #define LV_FREETYPE_CACHE_SIZE (16 * 1024)
+    #define LV_FREETYPE_CACHE_SIZE (4096 * 1024) // 4MB
     #if LV_FREETYPE_CACHE_SIZE >= 0
         /* 1: bitmap cache use the sbit cache, 0:bitmap cache use the image cache. */
         /* sbit cache:it is much more memory efficient for small bitmaps(font size < 256) */
@@ -641,7 +641,7 @@
         /* Maximum number of opened FT_Face/FT_Size objects managed by this cache instance. */
         /* (0:use system defaults) */
         #define LV_FREETYPE_CACHE_FT_FACES 0
-        #define LV_FREETYPE_CACHE_FT_SIZES 0
+        #define LV_FREETYPE_CACHE_FT_SIZES 0    
     #endif
 #endif
 
@@ -681,7 +681,7 @@
  ====================*/
 
 /*Show some widget. It might be required to increase `LV_MEM_SIZE` */
-#define LV_USE_DEMO_WIDGETS        1
+#define LV_USE_DEMO_WIDGETS        0
 #if LV_USE_DEMO_WIDGETS
 #define LV_DEMO_WIDGETS_SLIDESHOW  0
 #endif

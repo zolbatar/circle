@@ -42,7 +42,7 @@ eval set -- "$TEMP"
 
 RASPPI=1
 PREFIX=arm-none-eabi-
-MULTICORE=0
+MULTICORE=1
 REALTIME=0
 KEYMAP=
 QEMU=0

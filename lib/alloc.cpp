@@ -3,7 +3,7 @@
 //
 // Circle - A C++ bare metal environment for Raspberry Pi
 // Copyright (C) 2014-2021  R. Stange <rsta2@o2online.de>
-// 
+//
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
@@ -23,51 +23,51 @@
 #include <circle/util.h>
 #include <assert.h>
 
-void *malloc (size_t nSize)
+void *malloc(size_t nSize)
 {
-	return CMemorySystem::HeapAllocate (nSize, HEAP_DEFAULT_MALLOC);
+    return CMemorySystem::HeapAllocate(nSize, HEAP_DEFAULT_MALLOC);
 }
 
-void *memalign (size_t nAlign, size_t nSize)
+void *memalign(size_t nAlign, size_t nSize)
 {
-	assert (nAlign <= HEAP_BLOCK_ALIGN);
-	return CMemorySystem::HeapAllocate (nSize, HEAP_DEFAULT_MALLOC);
+    assert(nAlign <= HEAP_BLOCK_ALIGN);
+    return CMemorySystem::HeapAllocate(nSize, HEAP_DEFAULT_MALLOC);
 }
 
-void free (void *pBlock)
+void free(void *pBlock)
 {
-	CMemorySystem::HeapFree (pBlock);
+    CMemorySystem::HeapFree(pBlock);
 }
 
-void *calloc (size_t nBlocks, size_t nSize)
+void *calloc(size_t nBlocks, size_t nSize)
 {
-	nSize *= nBlocks;
-	if (nSize == 0)
-	{
-		nSize = 1;
-	}
-	assert (nSize >= nBlocks);
+    nSize *= nBlocks;
+    if (nSize == 0)
+    {
+        nSize = 1;
+    }
+    assert(nSize >= nBlocks);
 
-	void *pNewBlock = CMemorySystem::HeapAllocate (nSize, HEAP_DEFAULT_MALLOC);
-	if (pNewBlock != 0)
-	{
-		memset (pNewBlock, 0, nSize);
-	}
+    void *pNewBlock = CMemorySystem::HeapAllocate(nSize, HEAP_DEFAULT_MALLOC);
+    if (pNewBlock != 0)
+    {
+        memset(pNewBlock, 0, nSize);
+    }
 
-	return pNewBlock;
+    return pNewBlock;
 }
 
-void *realloc (void *pBlock, size_t nSize)
+void *realloc(void *pBlock, size_t nSize)
 {
-	return CMemorySystem::HeapReAllocate (pBlock, nSize);
+    return CMemorySystem::HeapReAllocate(pBlock, nSize);
 }
 
-void *palloc (void)
+void *palloc(void)
 {
-	return CMemorySystem::PageAllocate ();
+    return CMemorySystem::PageAllocate();
 }
 
-void pfree (void *pPage)
+void pfree(void *pPage)
 {
-	CMemorySystem::PageFree (pPage);
+    CMemorySystem::PageFree(pPage);
 }

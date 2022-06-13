@@ -20,6 +20,6 @@ liblvgl.a: $(OBJS)
 
 include $(CIRCLEHOME)/Rules.mk
 
-INCLUDE += -I $(LVGL_DIR)
+INCLUDE += -I $(LVGL_DIR) -I /Users/daryl/Dev/freetype-2.12.1/include -I /Users/daryl/Dev/freetype-2.12.1/include/freetype
 
 -include $(DEPS)
