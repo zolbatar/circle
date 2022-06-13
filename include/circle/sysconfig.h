@@ -35,7 +35,7 @@
 // increase this value. The value must be a multiple of 16 KByte.
 
 #ifndef KERNEL_MAX_SIZE
-#define KERNEL_MAX_SIZE (2 * MEGABYTE)
+#define KERNEL_MAX_SIZE (8 * MEGABYTE)
 #endif
 
 // HEAP_DEFAULT_NEW defines the default heap to be used for the "new"
@@ -236,7 +236,7 @@
 // MAX_TASKS is the maximum number of tasks in the system.
 
 #ifndef MAX_TASKS
-#define MAX_TASKS 20
+#define MAX_TASKS 256
 #endif
 
 // TASK_STACK_SIZE is the stack size for each task.
@@ -264,7 +264,7 @@
 
 #ifndef DEFAULT_KEYMAP
 
-#define DEFAULT_KEYMAP "DE"
+#define DEFAULT_KEYMAP "UK"
 //#define DEFAULT_KEYMAP		"ES"
 //#define DEFAULT_KEYMAP		"FR"
 //#define DEFAULT_KEYMAP		"IT"
